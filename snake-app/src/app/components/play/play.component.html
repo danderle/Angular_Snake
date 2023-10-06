@@ -1,7 +1,7 @@
 <div class="main-game-container">
     <div class="play-game-container">
-        <div class="score-text">Score: 10</div>
-        <div class="game-grid-container">
+        <div class="score-text">Score: {{score}}</div>
+        <div class="game-grid-container" [ngClass]="{'wall-hit': wallHit}">
             <div *ngFor="let cell of grid; let i = index" class="{{getCellType(i)}}"></div>
         </div>
     </div>

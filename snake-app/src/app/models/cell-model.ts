@@ -10,4 +10,8 @@ export class CellModel {
     public setGridIndex(): void{
         this.gridIndex = this.x/CellModel.CELL_SIZE + (this.y/CellModel.CELL_SIZE * this.gameGridMaxRows)
     }
+
+    public static copyCellModel(src: CellModel){
+        return new CellModel(src.x, src.y, src.cellType, src.gameGridMaxRows);
+    }
 }
