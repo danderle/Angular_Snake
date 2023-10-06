@@ -30,6 +30,9 @@
 }
 .fruit{
     background-color: red;
+    animation-name: fruitPulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 .head{
     background-color: blue;
@@ -42,4 +45,34 @@
 }
 .body3{
     background-color: #009600;
+}
+
+@keyframes fruitPulse{
+    0%{
+        background-color: #220000;
+    }
+    50%{
+        background-color: red;
+    }
+    100%{
+        background-color: #220000;
+    }
+}
+
+.gameOver-overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.gameOver-container{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }

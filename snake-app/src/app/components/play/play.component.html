@@ -2,11 +2,13 @@
     <div class="play-game-container">
         <div class="score-text">Score: 10</div>
         <div class="game-grid-container">
-            <div class="fruit"></div>
-            <div class="head"></div>
-            <div class="body1"></div>
-            <div class="body2"></div>
-            <div class="body3"></div>
+            <div *ngFor="let cell of grid; let i = index" class="{{getCellType(i)}}"></div>
         </div>
+    </div>
+</div>
+<div class="gameOver-overlay" *ngIf="gameOver">
+    <div class="gameOver-container">
+        <h1>Game over</h1>
+        <a routerLink="/highScores">continue</a>
     </div>
 </div>
