@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+html, body{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+}
+
+*{
+    margin: 0;
+    line-height: calc(1em + 0.5rem);
+}
+
+body{
+    height: 100vh;
+    background-image: radial-gradient(60vh 110vh, purple 50%, black);
+    background-repeat: repeat-y;
+    color: green;
+}
+
+h1{
+    font-size: 4rem;
+    margin-top: 3rem;
+}
+
+a{
+    text-align: center;
+    text-decoration: none;
+    border: 3px solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    width: 25vh;
+    font-size: 2rem;
+    transition: border-color ease 0.3s;
+    margin-bottom: 3rem;
+    color: green;
+    &:hover{
+        border-color: green;
+    }
+}
+

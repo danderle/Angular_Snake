@@ -1,0 +1,15 @@
+.main-menu-container{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 1rem;
+    grid-template-rows: auto 1fr auto;
+    height: 90vh;
+    min-height: 800px;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 3rem;
+}

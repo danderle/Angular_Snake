@@ -1,0 +1,45 @@
+.main-game-container{
+    display: grid;
+    height: 100%;
+    align-content: center;
+}
+
+.play-game-container{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    justify-content: center;
+    align-items: end;
+    align-content: center;
+    margin: 0 auto;
+}
+
+.game-grid-container{
+    display: grid;
+    grid-template-columns: repeat(40, 1rem);
+    grid-template-rows: repeat(40, 1rem);
+    background-color: black;
+}
+
+.score-text{
+    text-align: end;
+    font-size: 2rem;
+}
+
+.empty{
+    background-color: black;
+}
+.fruit{
+    background-color: red;
+}
+.head{
+    background-color: blue;
+}
+.body1{
+    background-color: #00ff00;
+}
+.body2{
+    background-color: #00c800;
+}
+.body3{
+    background-color: #009600;
+}
