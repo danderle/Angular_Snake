@@ -20,11 +20,19 @@ export class SnakeModel {
         this.maxGameGridSize = this.gameGridMaxRows * CellModel.CELL_SIZE;
     }
 
-    public eatSelf(nextMove: NextMoveModel): boolean{
+    public eatSelf(nextMove: NextMoveModel): boolean {
         const head = this.sections.at(-1) as CellModel;
         let xNext = head.x + nextMove.x;
         let yNext = head.y + nextMove.y;
-        return this.findSectionByCos(xNext, yNext) !== undefined;
+        //if the snake is a head and body it should be able to go into opposite direction
+        let index = 0;
+        // the head cant eat the 3 next sections
+        for (index; index < this.sections.length - 3; index++) {
+            if (xNext === this.sections[index].x &&
+                yNext === this.sections[index].y) {
+                return true;
+            }
+        }
         return false;
     }
 

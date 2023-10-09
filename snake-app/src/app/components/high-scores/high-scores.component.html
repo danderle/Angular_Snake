@@ -1,10 +1,20 @@
 <div class="high-scores-container">
     <h1>High scores</h1>
     <div class="scores-container">
-        <div class="score-line" *ngFor="let i of [1,1,1,1,1,1,1,1,1,1]">
-            <p class="score-text">TTT</p>
-            <p class="score-text">100</p>
+        <div *ngFor="let item of topScores">
+            <div class="score-line" *ngIf="item.newScore">
+                <input class="input-name score-text" 
+                placeholder="_" 
+                maxlength="3"
+                #inputName
+                (keyup)="getName(inputName.value)">
+                <p class="score-text">{{item.score}}</p>
+            </div>
+            <div class="score-line" *ngIf="!item.newScore">
+                <p class="score-text">{{item.name}}</p>
+                <p class="score-text">{{item.score}}</p>
+            </div>
         </div>
     </div>
-    <a routerLink="">Main menu</a>
+    <a routerLink="" (click)="saveNewTopScore()">Main menu</a>
 </div>

@@ -7,6 +7,7 @@ import { PlayComponent } from './components/play/play.component';
 const routes: Routes = [
   {path: '', component: MainMenuComponent},
   {path: 'highScores', component: HighScoresComponent},
+  {path: 'highScores/score:', component: HighScoresComponent},
   {path: 'play', component: PlayComponent},
 ];
 

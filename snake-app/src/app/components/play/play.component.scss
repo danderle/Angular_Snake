@@ -17,6 +17,8 @@
     display: grid;
     grid-template-columns: repeat(40, 1rem);
     grid-template-rows: repeat(40, 1rem);
+    background-color: black;
+    gap: 1px;
 }
 
 .wall-hit{
@@ -36,18 +38,23 @@
     animation-name: fruitPulse;
     animation-duration: 2s;
     animation-iteration-count: infinite;
+    border-radius: 50% 20%;
 }
 .head{
     background-color: blue;
+    border-radius: 50%;
 }
 .body1{
     background-color: #00ff00;
+    border-radius: 25%;
 }
 .body2{
     background-color: #00c800;
+    border-radius: 25%;
 }
 .body3{
     background-color: #009600;
+    border-radius: 25%;
 }
 
 @keyframes fruitPulse{

@@ -9,6 +9,6 @@
 <div class="gameOver-overlay" *ngIf="gameOver">
     <div class="gameOver-container">
         <h1>Game over</h1>
-        <a routerLink="/highScores">continue</a>
+        <a routerLink="/highScores" [queryParams]="{score: score}">continue</a>
     </div>
 </div>

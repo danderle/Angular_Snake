@@ -88,12 +88,10 @@ export class PlayComponent implements OnInit {
 
   private doNextMove(): void {
     let nextMove: NextMoveModel;
-    //handle player moves
     if (this.playerMoves.length > 0) {
       nextMove = this.playerMoves[0];
       this.playerMoves.splice(0, 1);
     } else {
-      //handle automatic snake moves
       nextMove = this.snake.calcNextMove();
     }
     //handle possible wall hits
