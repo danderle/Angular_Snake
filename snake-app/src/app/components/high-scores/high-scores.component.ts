@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
@@ -17,7 +18,10 @@ export class HighScoresComponent implements OnInit, AfterViewInit{
   @ViewChild('inputName')
   public inputName: ElementRef;
 
-  constructor(private route: ActivatedRoute){}
+  private baseUrl = "https://localhost:7078/topScores"
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient){}
   ngAfterViewInit(): void {
     if(this.inputName){
       this.inputName.nativeElement.focus();
@@ -30,14 +34,10 @@ export class HighScoresComponent implements OnInit, AfterViewInit{
     });
 
     //todo load top scores from backend
-    this.topScores = [
-      {name: 'ddd', score: 4, newScore: false},
-      {name: 'ddd', score: 3, newScore: false},
-      {name: 'ddd', score: 2, newScore: false},
-      {name: 'ddd', score: 1, newScore: false},
-    ];
-
-    this.addNewHighScore();
+    this.http.get<HighScoreModel[]>(this.baseUrl).subscribe(response => {
+      this.topScores = response;
+      this.addNewHighScore();
+    });
   }
 
   public saveNewTopScore(): void{
@@ -45,6 +45,7 @@ export class HighScoresComponent implements OnInit, AfterViewInit{
     let topScore = this.topScores.find(item => item.newScore);
     if(topScore){
       topScore.name = this.name;
+      this.http.post<HighScoreModel>(this.baseUrl, topScore).subscribe();
     }
   }
 
